@@ -45,17 +45,17 @@ const PREMIUM_LINK_SECRET = "676f7c68b7b73dbea23a46254265286e2120a64f08738de0197
 
 function indexPage() {
   return `<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#08070b"><meta name="description" content="Veyra Stehl ‚Äî Yoga, fitness, and visual inspiration."><title>Veyra Stehl</title><link rel="stylesheet" href="/styles.css"></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#08070b"><meta name="description" content="Veyra Stehl &mdash; Yoga, fitness, and visual inspiration."><title>Veyra Stehl</title><link rel="stylesheet" href="/styles.css"></head>
 <body>
   <main>
     <section class="profile-hero" aria-labelledby="veyra-name">
       <figure class="portrait"><img src="/veyra-stehl.jpg" alt="Veyra Stehl seated in an arched desert setting"></figure>
-      <div class="profile-copy"><p class="eyebrow">Digital creator</p><h1 id="veyra-name">Veyra Stehl</h1><h2>Yoga <span>‚Ä¢</span> Fitness <span>‚Ä¢</span> Visual inspiration</h2><p class="lede">Yoga and fitness for visual inspiration ‚Äî mainly for men, but all are welcome. Move better, stress less, and build a stronger mind and body.</p>
+      <div class="profile-copy"><p class="eyebrow">Digital creator</p><h1 id="veyra-name">Veyra Stehl</h1><h2>Yoga <span>&bull;</span> Fitness <span>&bull;</span> Visual inspiration</h2><p class="lede">Yoga and fitness for visual inspiration &mdash; mainly for men, but all are welcome. Move better, stress less, and build a stronger mind and body.</p>
         <div class="actions">
-          <a class="button primary" href="https://www.instagram.com/veyrastehl/" target="_blank" rel="noopener">Instagram ‚Üó</a>
-          <a class="button primary" href="https://www.tiktok.com/@veyrastehl" target="_blank" rel="noopener">TikTok ‚Üó</a>
-          <a class="button primary" href="https://x.com/veyrastehl" target="_blank" rel="noopener">X ‚Üó</a>
-          <button class="button dark" id="premium-btn" type="button">Premium sites ‚Üó</button>
+          <a class="button primary" href="https://www.instagram.com/veyrastehl/" target="_blank" rel="noopener">Instagram &#8599;</a>
+          <a class="button primary" href="https://www.tiktok.com/@veyrastehl" target="_blank" rel="noopener">TikTok &#8599;</a>
+          <a class="button primary" href="https://x.com/veyrastehl" target="_blank" rel="noopener">X &#8599;</a>
+          <button class="button dark" id="premium-btn" type="button">Premium sites &#8599;</button>
         </div>
       </div>
     </section>
@@ -80,12 +80,12 @@ function indexPage() {
 
 function premiumPage() {
   return `<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#08070b"><meta name="robots" content="noindex,nofollow"><title>Veyra Stehl ‚Äî Premium</title><link rel="stylesheet" href="/styles.css"></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#08070b"><meta name="robots" content="noindex,nofollow"><title>Veyra Stehl &mdash; Premium</title><link rel="stylesheet" href="/styles.css"></head>
 <body>
   <main>
     <section class="profile-hero" aria-labelledby="premium-title">
       <div class="profile-copy"><h1 id="premium-title">Premium content</h1><p class="lede">Continue to see more.</p>
-        <div class="actions"><a class="button primary" id="go-premium" href="${PREMIUM_DESTINATION}" target="_blank" rel="noopener">Continue ‚Üó</a></div>
+        <div class="actions"><a class="button primary" id="go-premium" href="${PREMIUM_DESTINATION}" target="_blank" rel="noopener">Continue &#8599;</a></div>
       </div>
     </section>
   </main>
