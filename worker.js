@@ -84,19 +84,40 @@ function indexPage() {
 }
 
 function premiumPage() {
+  // 2026-10-27 (Edgar): parity with disruptful.com's premium flow -- an
+  // explicit "I am over 18" age-gate step before the OnlyFans/MYM choice is
+  // shown, not just the token/bot/referrer gating that already protects this
+  // page server-side. Purely client-side (both sections are already present
+  // in this one gated response; no extra round trip needed), toggled via the
+  // tiny inline script below.
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#08070b"><meta name="robots" content="noindex,nofollow"><title>Veyra Stehl &mdash; Premium</title><link rel="stylesheet" href="/styles.css"></head>
 <body>
   <main>
     <section class="profile-hero" aria-labelledby="premium-title">
-      <div class="profile-copy"><h1 id="premium-title">Premium content</h1><p class="lede">Choose a site to continue.</p>
-        <div class="actions">
-          <a class="button primary" href="${OF_URL}" target="_blank" rel="noopener noreferrer">OnlyFans &#8599;</a>
-          <a class="button primary" href="${MYM_URL}" target="_blank" rel="noopener noreferrer">MYM &#8599;</a>
+      <div class="profile-copy">
+        <div id="age-gate">
+          <h1 id="premium-title">Sensitive Content</h1>
+          <p class="lede">These links may contain content that is not appropriate for all audiences.</p>
+          <div class="actions"><button class="button primary" id="age-confirm" type="button">I am over 18</button></div>
+        </div>
+        <div id="premium-choice" style="display:none">
+          <h1>Premium content</h1>
+          <p class="lede">Choose a site to continue.</p>
+          <div class="actions">
+            <a class="button primary" href="${OF_URL}" target="_blank" rel="noopener noreferrer">OnlyFans &#8599;</a>
+            <a class="button primary" href="${MYM_URL}" target="_blank" rel="noopener noreferrer">MYM &#8599;</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
+  <script>
+    document.getElementById('age-confirm').addEventListener('click', function () {
+      document.getElementById('age-gate').style.display = 'none';
+      document.getElementById('premium-choice').style.display = '';
+    });
+  </script>
 </body></html>`;
 }
 
