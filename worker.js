@@ -36,7 +36,12 @@ const GALLERY = [
   "/veyra-stehl-car-portrait.jpg",
 ];
 
-const PREMIUM_DESTINATION = "https://disruptful.org/premium/veyra-stehl";
+// 2026-10-27 (Edgar): no hop through disruptful.org -- her site must be 100%
+// standalone. Direct real-platform destinations, same as previously reached
+// via disruptful.org/premium/veyra-stehl (that page itself pulled these from
+// disruptful-site's functions/_lib/premiumLinks.js).
+const OF_URL = "https://onlyfans.com/veyrastehl";
+const MYM_URL = "https://mym.fans/Veyrastehl";
 const TOKEN_TTL_SECONDS = 60;
 // Gates a public marketing link against naive crawlers, not an auth secret --
 // safe to keep as a plain source constant rather than a separate Workers
@@ -84,8 +89,11 @@ function premiumPage() {
 <body>
   <main>
     <section class="profile-hero" aria-labelledby="premium-title">
-      <div class="profile-copy"><h1 id="premium-title">Premium content</h1><p class="lede">Continue to see more.</p>
-        <div class="actions"><a class="button primary" id="go-premium" href="${PREMIUM_DESTINATION}" target="_blank" rel="noopener">Continue &#8599;</a></div>
+      <div class="profile-copy"><h1 id="premium-title">Premium content</h1><p class="lede">Choose a site to continue.</p>
+        <div class="actions">
+          <a class="button primary" href="${OF_URL}" target="_blank" rel="noopener noreferrer">OnlyFans &#8599;</a>
+          <a class="button primary" href="${MYM_URL}" target="_blank" rel="noopener noreferrer">MYM &#8599;</a>
+        </div>
       </div>
     </section>
   </main>
